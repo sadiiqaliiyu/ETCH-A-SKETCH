@@ -1,0 +1,64 @@
+html {
+    background: #ccc;
+    margin: 0;
+    padding:0;
+    font-size: .5rem;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#main {
+    margin-top: 5rem;
+    background: red;
+    border-radius: 15px;
+    width: 70rem;
+    margin: 0 auto;
+
+
+    
+}
+
+h1{
+    text-align: center;
+    font-size: 5rem;
+    padding: 2rem;
+    margin:0;
+}
+
+.topButton {
+    padding: .9rem;
+    text-align: center;
+    width: 180px;
+    margin: 0 auto;
+    
+}
+
+.bottomButton {
+    padding: .9rem;
+    width: 180px;
+    margin: 0 auto;
+    padding-bottom: 5rem;
+
+    
+}
+
+button{
+    display: inline-block;
+    padding: .5rem;
+}
+
+.bottomButton button {
+    border-radius: 7rem;
+    padding: 3rem 2rem;
+    margin-right: 2rem;
+}
+
+#grid{
+    width: 50rem;
+    height: 40rem;
+    background: white;
+    margin: 2rem auto;
+}
