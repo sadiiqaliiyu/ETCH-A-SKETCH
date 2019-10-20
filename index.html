@@ -17,17 +17,33 @@
             <div id="grid">
                     
             </div>
+
             <div class="bottomButton">
-                <button>Reset</button>
+                <button id='reset'>Reset</button>
                 <button>Resize</button>
             </div>
 
         </div>
         <script>
-            
+            const gridbox = document.querySelector('#grid');
+            const reset = document.querySelector('#reset');                
 
-            
-        
+            reset.addEventListener('click', ()=>{
+                let divs = document.createElement('div');
+
+                for(let i = 0; i < 16; i++){
+                    let div = '<div>';
+                    for (let j = 0; j < 16; j++){
+                        div += '<div class="box">' + j + '</div>';
+                    }
+                    div += '</div>';
+                    divs.innerHTML = div;
+
+                    
+                }
+                return (gridbox.appendChild(divs));
+            })
+
         </script>
 
     </body>

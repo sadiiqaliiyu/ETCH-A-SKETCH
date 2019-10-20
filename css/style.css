@@ -25,7 +25,7 @@ h1{
     text-align: center;
     font-size: 5rem;
     padding: 2rem;
-    margin:0;
+    margin-bottom:0;
 }
 
 .topButton {
@@ -58,7 +58,15 @@ button{
 
 #grid{
     width: 50rem;
-    height: 40rem;
     background: white;
     margin: 2rem auto;
+}
+
+.box{
+    width: 2.5rem;
+    height: 2.5rem;
+    background: black;
+    float: left;
+    color: white;
+
 }
