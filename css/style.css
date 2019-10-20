@@ -57,14 +57,17 @@ button{
 }
 
 #grid{
-    width: 50rem;
+    position: relative;
+    width: 60rem;
+    height: 60rem;
     background: white;
     margin: 2rem auto;
+    padding: 0;
+	border: none;
 }
 
 .box{
-    width: 2.5rem;
-    height: 2.5rem;
+    
     background: black;
     float: left;
     color: white;

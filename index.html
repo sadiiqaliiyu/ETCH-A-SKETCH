@@ -28,21 +28,24 @@
             const gridbox = document.querySelector('#grid');
             const reset = document.querySelector('#reset');                
 
-            reset.addEventListener('click', ()=>{
-                let divs = document.createElement('div');
+            function createCanvas (n) {
+                let boxDimension = (960 / n) / 16;
+                let boxSize = n ** 2;
 
-                for(let i = 0; i < 16; i++){
-                    let div = '<div>';
-                    for (let j = 0; j < 16; j++){
-                        div += '<div class="box">' + j + '</div>';
-                    }
-                    div += '</div>';
-                    divs.innerHTML = div;
-
+                while(boxSize > 0){
+                    let div = document.createElement('div');
+                    div.classList.add('box');
+                    div.style.width = boxDimension + 'rem';
+                    div.style.height = boxDimension + 'rem';
                     
+                    gridbox.appendChild(div);
+                    boxSize--;
+                    console.log("hello");
+
                 }
-                return (gridbox.appendChild(divs));
-            })
+            }
+
+            createCanvas(60);
 
         </script>
 
