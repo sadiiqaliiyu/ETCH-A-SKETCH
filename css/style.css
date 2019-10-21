@@ -60,7 +60,7 @@ button{
     position: relative;
     width: 60rem;
     height: 60rem;
-    background: white;
+    background: black;
     margin: 2rem auto;
     padding: 0;
 	border: none;
@@ -68,8 +68,12 @@ button{
 
 .box{
     
-    background: black;
+    background: white;
     float: left;
     color: white;
 
+}
+
+.black{
+    background: black;
 }

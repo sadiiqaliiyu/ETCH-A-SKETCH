@@ -26,9 +26,16 @@
         </div>
         <script>
             const gridbox = document.querySelector('#grid');
-            const reset = document.querySelector('#reset');                
+            const reset = document.querySelector('#reset');   
 
-            function createCanvas (n) {
+            function resetGrid () {
+                let grid = document.getElementById("grid");
+                grid.innerHTML = "";
+            }
+             
+            function createCanvas () {
+                resetGrid();
+                let n = prompt("what size of board do you want?");
                 let boxDimension = (960 / n) / 16;
                 let boxSize = n ** 2;
 
@@ -45,7 +52,26 @@
                 }
             }
 
-            createCanvas(60);
+           
+            let grids = document.querySelector('#grid');
+
+            grids.addEventListener('mouseenter', (e)=>{
+                console.log(e.target);
+
+                let box = document.querySelectorAll('.box');
+                box.forEach( div => {
+                div.addEventListener('mouseover', (e)=>{
+                    console.log(e.target);
+                    div.style.background = "black";
+                })
+            });
+
+            })
+            
+
+            reset.addEventListener('click', createCanvas)
+
+            
 
         </script>
 
