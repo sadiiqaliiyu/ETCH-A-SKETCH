@@ -6,72 +6,35 @@
     </head>
     <body>
         <div id="main">
-                <h1>Etch-A-Sketch</h1>
-                <div class="topButton">
-                    <button>Black</button>
-                    <button>Color</button>
-                    <button>Shader</button>
-                    <button>Eraser</button>
-                </div>
+            <h1>Etch-A-Sketch</h1>
+            <div class="topButton">
+                <button id="black">Black</button>
+                <button id='color'>Color</button>
+                <button id='shade'>Shader</button>
+                <button id='eraser'>Eraser</button>
+            </div>
 
             <div id="grid">
                     
             </div>
 
-            <div class="bottomButton">
-                <button id='reset'>Reset</button>
-                <button>Resize</button>
+            <button class="trigger">Click here to trigger the modal!</button>
+            <div class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h1>Etch-A-Sketch</h1>
+                </div>
             </div>
 
+
+
+
         </div>
+               
+
         <script>
-            const gridbox = document.querySelector('#grid');
-            const reset = document.querySelector('#reset');   
-
-            function resetGrid () {
-                let grid = document.getElementById("grid");
-                grid.innerHTML = "";
-            }
-             
-            function createCanvas () {
-                resetGrid();
-                let n = prompt("what size of board do you want?");
-                let boxDimension = (960 / n) / 16;
-                let boxSize = n ** 2;
-
-                while(boxSize > 0){
-                    let div = document.createElement('div');
-                    div.classList.add('box');
-                    div.style.width = boxDimension + 'rem';
-                    div.style.height = boxDimension + 'rem';
-                    
-                    gridbox.appendChild(div);
-                    boxSize--;
-                    console.log("hello");
-
-                }
-            }
-
            
-            let grids = document.querySelector('#grid');
-
-            grids.addEventListener('mouseenter', (e)=>{
-                console.log(e.target);
-
-                let box = document.querySelectorAll('.box');
-                box.forEach( div => {
-                div.addEventListener('mouseover', (e)=>{
-                    console.log(e.target);
-                    div.style.background = "black";
-                })
-            });
-
-            })
-            
-
-            reset.addEventListener('click', createCanvas)
-
-            
+                     
 
         </script>
 
