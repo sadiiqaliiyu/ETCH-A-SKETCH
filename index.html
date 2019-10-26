@@ -38,6 +38,7 @@
             let closeButton = document.querySelector(".close-button");
             let canvas = document.querySelector("#grid");
             let blackPen = document.querySelector('#black');
+            let erasePen = document.querySelector('#eraser');
             let canvasBox = document.querySelectorAll(".box");
 
 
@@ -87,7 +88,34 @@
                 }
             }
 
-           
+            function drawBlack(e){
+                if(e.target.id == 'black'){
+                    canvas.addEventListener('mouseover', (e)=>{
+                    e.target.style.backgroundColor = 'black';
+
+                });
+                }
+                else{
+                    e.target.style.backgroundColor = "black";
+
+                }
+            }
+
+            function drawColors(e){
+
+            }
+
+            function eraseDrawing (e){
+                canvas.addEventListener('mouseover', (e)=>{
+                    e.target.style.backgroundColor = 'white';
+                })
+
+            }
+
+            canvas.addEventListener('mouseover', drawBlack);
+            blackPen.addEventListener('click', drawBlack);
+            erasePen.addEventListener('click', eraseDrawing);
+            
 
 
 
