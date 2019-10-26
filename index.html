@@ -33,7 +33,45 @@
                
 
         <script>
+            let modal = document.querySelector(".modal");
+            let trigger = document.querySelector(".trigger");
+            let closeButton = document.querySelector(".close-button");
+            let canvas = document.querySelector("#grid");
+            let blackPen = document.querySelector('#black');
+            let canvasBox = document.querySelectorAll(".box");
+
+
+
+
+            function toggleModal() {
+                modal.classList.toggle("show-modal");
+
+            }
+
+            function windowOnClick(event) {
+                if (event.target === modal) {
+                    toggleModal();
+                    createCanvas(16);
+
+
+                }
+            }
+
+            function closeAction(){
+                toggleModal();
+                createCanvas(16);
+            }
+
            
+
+
+
+            window.onload = toggleModal();
+
+            trigger.addEventListener("click", toggleModal);
+            closeButton.addEventListener("click", closeAction);
+            window.addEventListener("click", windowOnClick);
+
                      
 
         </script>
