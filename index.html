@@ -38,7 +38,9 @@
             let closeButton = document.querySelector(".close-button");
             let canvas = document.querySelector("#grid");
             let blackPen = document.querySelector('#black');
-            let erasePen = document.querySelector('#eraser');
+            let eraser = document.querySelector('#eraser');
+            let colorPen = document.querySelector('#color');
+            let shadePen = document.querySelector('#shade');
             let canvasBox = document.querySelectorAll(".box");
 
 
@@ -88,33 +90,49 @@
                 }
             }
 
-            function drawBlack(e){
+            function drawPen(e){
                 if(e.target.id == 'black'){
                     canvas.addEventListener('mouseover', (e)=>{
                     e.target.style.backgroundColor = 'black';
 
                 });
                 }
+
+                else if (e.target.id == 'color'){
+                    canvas.addEventListener('mouseover', (e)=>{
+                    e.target.style.backgroundColor = '#' + randomColors() + randomColors() + randomColors()});
+                }
+
+                else if (e.target.id == 'shade'){
+                   
+                }
+
                 else{
                     e.target.style.backgroundColor = "black";
 
                 }
             }
 
-            function drawColors(e){
+            
+                
 
+            function randomColors(){
+                let colors = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+                let random = Math.floor(Math.random() * 16);
+                let shade = colors[random];
+                 
+                
+                return shade;
             }
 
-            function eraseDrawing (e){
+            function erasePen (e){
                 canvas.addEventListener('mouseover', (e)=>{
                     e.target.style.backgroundColor = 'white';
                 })
 
             }
 
-            canvas.addEventListener('mouseover', drawBlack);
-            blackPen.addEventListener('click', drawBlack);
-            erasePen.addEventListener('click', eraseDrawing);
+            
             
 
 
@@ -125,6 +143,11 @@
             closeButton.addEventListener("click", closeAction);
             window.addEventListener("click", windowOnClick);
 
+            canvas.addEventListener('mouseover', drawPen);
+            blackPen.addEventListener('click', drawPen);
+            eraser.addEventListener('click', erasePen);
+            shadePen.addEventListener('click', drawPen);
+            colorPen.addEventListener('click', drawPen);
                      
 
         </script>
