@@ -5,17 +5,17 @@ My design is inspired by the real Etch A Sketch drawing toy invented by André C
 [Click to play!](https://sadiiqaliiyu.github.io/ETCH-A-SKETCH/)
 
 ## Instructions
-** Black Pen ** : Colors in squares black as you move over them.
+**BlackPen** : Colors in squares black as you move over them.
 
-** Color! ** : Paints a random color on the canvas.
+**Color!** : Paints a random color on the canvas.
 
-** Gradual Shading ** : Will gradually make squares darker each time you go over them.
+**Shade** : Will gradually make squares darker each time you go over them.
 
-** Eraser ** : To erase errors made.
+**Eraser** : To erase errors made.
 
-** Clear ** : Will reset the current drawing area.
+**Clear** : Will reset the current drawing area.
 
-** Reset ** : Will resize the ammount of pixels in drawing area.
+**Reset** : Will resize the ammount of pixels in drawing area.
 
 # Info
 made by Aliyu Sadiq using HTML, CSS and JavaScript.
