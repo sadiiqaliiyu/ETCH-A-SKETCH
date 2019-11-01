@@ -2,16 +2,20 @@
 This is a Basic EtchASketch project for The Odin Project.
 My design is inspired by the real Etch A Sketch drawing toy invented by André Cassagnes.
 
+[Click to play!](https://sadiiqaliiyu.github.io/ETCH-A-SKETCH/)
+
 ## Instructions
-Black Pen - Colors in squares black as you move over them.
+** Black Pen ** : Colors in squares black as you move over them.
 
-Color! - Paints a random color on the canvas.
+** Color! ** : Paints a random color on the canvas.
 
-Gradual Shading- Will gradually make squares darker each time you go over them.
+** Gradual Shading ** : Will gradually make squares darker each time you go over them.
 
-Clear Grid - Will reset the current drawing area.
+** Eraser ** : To erase errors made.
 
-Reset - Will resize the ammount of pixels in drawing area.
+** Clear ** : Will reset the current drawing area.
+
+** Reset ** : Will resize the ammount of pixels in drawing area.
 
 # Info
 made by Aliyu Sadiq using HTML, CSS and JavaScript.
