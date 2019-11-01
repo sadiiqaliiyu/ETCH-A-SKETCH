@@ -6,7 +6,7 @@
     </head>
     <body>
         <div id="main">
-            <h1>Etch-A-Sketch</h1>
+            
             <div class="topButton">
                 <button id="black">Black</button>
                 <button id='color'>Color</button>
@@ -18,15 +18,20 @@
                     
             </div>
 
-            <button class="trigger">Click here to trigger the modal!</button>
+           
             <div class="modal">
                 <div class="modal-content">
                     <span class="close-button">&times;</span>
-                    <h1>Etch-A-Sketch</h1>
+                    <img src="imgs/unnamed.jpg" width="360rem" height="240rem">
+                    <h2>Have fun sketching!</h2>
                 </div>
             </div>
 
-
+            <div class="bottomButton">
+                <button id='reset'>Resize</button>
+                <h1>Etch-A-Sketch</h1>
+                <button id='clear'>Clear</button>
+            </div>
 
 
         </div>
@@ -34,29 +39,23 @@
 
         <script>
             let modal = document.querySelector(".modal");
-            let trigger = document.querySelector(".trigger");
             let closeButton = document.querySelector(".close-button");
             let canvas = document.querySelector("#grid");
             let blackPen = document.querySelector('#black');
             let eraser = document.querySelector('#eraser');
             let colorPen = document.querySelector('#color');
             let shadePen = document.querySelector('#shade');
-            let canvasBox = document.querySelectorAll(".box");
-
-
-
+            const resize = document.querySelector('#reset');
+            const clear = document.querySelector('#clear');
 
             function toggleModal() {
                 modal.classList.toggle("show-modal");
-
             }
 
             function windowOnClick(event) {
                 if (event.target === modal) {
                     toggleModal();
                     createCanvas(16);
-
-
                 }
             }
 
@@ -94,60 +93,57 @@
                 if(e.target.id == 'black'){
                     canvas.addEventListener('mouseover', (e)=>{
                     e.target.style.backgroundColor = 'black';
-
-                });
+                    });
                 }
-
                 else if (e.target.id == 'color'){
                     canvas.addEventListener('mouseover', (e)=>{
                     e.target.style.backgroundColor = '#' + randomColors() + randomColors() + randomColors()});
                 }
-
-                else if (e.target.id == 'shade'){
-                   
+                else if (e.target.id == 'shade'){  
                 }
-
                 else{
                     e.target.style.backgroundColor = "black";
-
                 }
             }
 
-            
-                
-
             function randomColors(){
-                let colors = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+                let shades = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
                 let random = Math.floor(Math.random() * 16);
-                let shade = colors[random];
-                 
+                let colors = shades[random];                
+                return colors;
+            }
+
+            function shadeGrey(){
                 
-                return shade;
             }
 
             function erasePen (e){
                 canvas.addEventListener('mouseover', (e)=>{
                     e.target.style.backgroundColor = 'white';
                 })
-
             }
 
             
-            
-
-
 
             window.onload = toggleModal();
-
-            trigger.addEventListener("click", toggleModal);
             closeButton.addEventListener("click", closeAction);
             window.addEventListener("click", windowOnClick);
-
             canvas.addEventListener('mouseover', drawPen);
             blackPen.addEventListener('click', drawPen);
             eraser.addEventListener('click', erasePen);
             shadePen.addEventListener('click', drawPen);
             colorPen.addEventListener('click', drawPen);
+            resize.addEventListener('click', ()=>{
+                let response = prompt('Input the size of grid you want. Note: Minimum: 2 & Maximum: 64') || 64;
+                createCanvas(response);
+            });
+            clear.addEventListener('click', ()=>{
+                let canvasBox = document.querySelectorAll(".box");
+                console.log('hello');
+                canvasBox.forEach(box => {
+                    box.style.backgroundColor = 'white';
+                })
+            });
                      
 
         </script>
